@@ -33,6 +33,6 @@
             <input type="file" id="fileChooser" onChange="updateTxtList(this)" accept=".txt">
         </div>
     </div>
+    <script src="scripts.js"></script> 
 </body>
-<script src="scripts.js"></script> 
 </html>
