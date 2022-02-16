@@ -1,0 +1,179 @@
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
+
+
+:root {
+    /* colors */
+    --clr-light: #21d4ec;
+    --clr-accent: #4c91ac;
+    --clr-dark: #4e5178;
+
+    --clr-white: #fff;
+    --clr-black: #000;
+    
+    /* font-sizes */
+    --fs-900: 9.375rem;
+    --fs-800: 6.25rem;
+    --fs-700: 3.5rem;
+    --fs-600: 2rem;
+    --fs-500: 1.75rem;
+    --fs-400: 1.35rem;
+    --fs-300: 1rem;
+    --fs-200: 0.875rem;
+    
+    /* font-families */
+    --ff-serif: "Bellefair", serif;
+    --ff-sans-cond: "Barlow Condensed", sans-serif;
+    --ff-sans-normal: "Barlow", sans-serif;
+
+    --gap: 1rem;
+}
+
+@media (min-width: 35em) {
+    :root {
+        --fs-700: 2.5rem;
+        --fs-400: 1rem;
+
+        --gap: 0.75rem;
+    }
+}
+
+@media (min-width: 45em) {
+    :root {
+        /* font-sizes */
+        --fs-700: 3.5rem;
+        --fs-400: 1.125rem;
+
+        --gap: 0.875rem;
+    }
+}
+
+
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+p {
+    margin: 0; 
+}
+
+h1,
+p {
+    font-weight: 400;
+}
+
+/* make images easier to work with */
+img,
+picutre {
+    max-width: 100%;
+    display: block;
+}
+
+/* make form elements easier to work with */
+input,
+button,
+textarea {
+    font: inherit;
+}
+
+
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+
+/* general */
+.container {
+    padding-inline: 2em;
+    margin-inline: auto;
+    max-width: 80rem;
+    display: flex;
+    gap: var(--gap);
+}
+
+.wrapper{
+    margin-inline: auto;
+    max-width: 80rem;
+    display: flex;
+    gap: var(--gap);
+}
+
+.column {
+    flex-direction: column;
+}
+
+.centered{
+    justify-content: center;
+}
+
+/* colors */
+.bg-dark { background-color: var(--clr-dark) ;}
+.bg-light { background-color: var(--clr-light) ;}
+.bg-accent { background-color: var(--clr-accent);}
+.bg-white { background-color: var(--clr-white) ;}
+
+.text-dark { color: var(--clr-dark) ;}
+.text-light { color: var(--clr-light) ;}
+.text-accent { color: var(--clr-accent);}
+.text-white { color: var(--clr-white) ;}
+
+/* typography */
+.ff-serif { font-family: var(--ff-serif); } 
+.ff-sans-cond { font-family: var(--ff-sans-cond); } 
+.ff-sans-normal { font-family: var(--ff-sans-normal); }
+
+
+/* ------------------- */
+/* Project specifics   */
+/* ------------------- */
+
+/* set up the body */
+body {
+    font-family: var(--ff-sans-normal);
+    font-size: var(--fs-400);
+    color: var(--clr-white);
+    background-color: var(--clr-dark);
+    line-height: 1.5;
+    min-height: 100vh;
+    
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    
+    overflow-x: hidden;
+}
+
+h1 {
+    font-family: var(--ff-sans-cond);
+    font-size: var(--fs-700);
+}
+
+p{
+    font-family: var(--ff-serif);
+    font-size: var(--fs-400);
+}
+
+button, input {
+    height: 2.25rem;
+}
+
+/* Text classes for the sentences to add. */ 
+.text{
+    border-width: 1px;
+    border-radius: 5px;
+    background-color: var(--clr-accent);
+    padding-inline: 0.5rem;
+    cursor: default;
+    user-select: none;
+}
