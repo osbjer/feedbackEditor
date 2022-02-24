@@ -168,13 +168,12 @@ button, input {
     visibility: hidden;
     border: solid black 1px;
     border-radius: 5px;
-    background-color: var(--clr-accent);
+    background-color: var(--clr-dark);
     width: max-content;
     max-width: 80%;
     padding: 0.8rem;
     position: fixed;
-    right: 50%;
-    left: 50%;
+    left: 35%;
     top: 40%;
 }
 
