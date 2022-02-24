@@ -13,6 +13,9 @@
         <h1>Online feedback editor</h1>
     </div>
 
+    <!-- Alertbox -->
+    <div class="messagebox" id="messagebox"></div>
+
     <!-- Site container -->
     <div class="container">
 

@@ -1,0 +1,12 @@
+Mycket bra beskrivet och förklarat.
+Du skriver kortfattat och helt korrekt. 
+Du formulerar dig jättebra!
+Jag tycker du skrivit en bra och tydlig text.
+Du skriver snyggt typsatta matematiska uttryck. 
+Det är lätt att följa ditt resonemang och hur du tänker. 
+Bra illustrerat med tydliga exempel men också generellt resonemang.
+Det kan gärna förklaras tydligare, gärna med ett exempel. 
+Du behöver använda en ekvationseditor så att ekvationerna med division blir korrekt typsatta. 
+Använd inte * som multiplikationstecken, utan punkt eller kryss.
+Du behöver skilja mellan exempel och generellt fall. Exempel är bra för att illustrera det generella fallet, men det räcker inte som bevis. 
+I första beviset behöver du hänvisa till multiplikationsprincipen.
