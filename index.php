@@ -13,7 +13,7 @@
         <h1>Online feedback editor</h1>
     </div>
 
-    <!-- Alertbox -->
+    <!-- Messagebox -->
     <div class="messagebox" id="messagebox"></div>
 
     <!-- Site container -->
@@ -23,7 +23,7 @@
         <div class="wrapper column">
             <textarea name="comment" id="comment" cols="60" rows="20"></textarea>
             <div class="container">
-                <button value="Select" onClick="selectText()">Select</button>
+                <button value="Select" onClick="selectText()">Select & copy</button>
                 <button value="Reset" onClick="resetTextbox()">Reset</button>
             </div>
         </div>
