@@ -1,5 +1,8 @@
-function showAlert(message) {
-
+// Creates an alertbox with a message with a duration (of 2 seconds as default). 
+function showAlert(message, duration=2000) {
+    
+    if(duration <= 0) duration = 2000;
+    
     var messagebox = document.getElementById("messagebox");
 
     messagebox.textContent = message;
@@ -8,9 +11,10 @@ function showAlert(message) {
     setTimeout(() => {
         messagebox.style.visibility = "hidden";
         messagebox.textContents = "";        
-    }, 2000);
+    }, duration);
 }
 
+// Adds text from a button to the textbox at the current cursor position. 
 function addText(id) {
     var textArea = document.getElementById("comment");
     var sentenceButton = document.getElementById("sentence"+id);
@@ -36,6 +40,7 @@ function addText(id) {
     sentenceButton.style.visibility = "collapse";
 }
 
+// Function that empties the textbox and resets all the buttons with the sentences.
 function resetTextbox() {
     if(confirm('Are you sure you want to reset the text?')){
         document.getElementById("comment").value = "";
@@ -52,6 +57,7 @@ function resetTextbox() {
     }
 }
 
+// Function that selects all text in the textbox and adds it to the clipboard.
 function selectText(){
     var textArea = document.getElementById("comment");
     var text = textArea.value;
@@ -61,6 +67,7 @@ function selectText(){
     showAlert("Text copied to clipboard!");
 }
 
+// Resets the list of buttons with all the sentences. 
 function updateTxtList(input) {
     
     var chosenFile = input.files[0];
@@ -74,7 +81,7 @@ function updateTxtList(input) {
             var contents = res.target.result;
             contents = contents.split('\n');
 
-            // Ta bort alla gamla element
+            // Remove all old elements
             var textListElement = document.getElementById("textlist");
             var lastElementListChild = textListElement.lastElementChild;
 
@@ -83,14 +90,24 @@ function updateTxtList(input) {
                 lastElementListChild = textListElement.lastElementChild;
             }
 
+            // Add all elements
             contents.forEach((element, index) => {
-                var tag = document.createElement("div");
-                var text = document.createTextNode(element.trim());
-                tag.classList.add("text");
-                tag.setAttribute("id", "sentence" + index);
-                tag.setAttribute("onClick","addText('" + index + "');");
-                tag.appendChild(text);
-                textListElement.appendChild(tag); 
+                var textNode = document.createTextNode(element.trim());
+                var text = textNode.textContent;
+
+                if(text.length > 0 && text.charAt(0) == '[') {
+                    textNode.textContent = text.substring(1, text.length-1);
+                    var tag = document.createElement("h2");
+                    tag.appendChild(textNode);
+                    textListElement.appendChild(tag); 
+                } else {
+                    var tag = document.createElement("div");
+                    tag.classList.add("text");
+                    tag.setAttribute("id", "sentence" + index);
+                    tag.setAttribute("onClick","addText('" + index + "');");
+                    tag.appendChild(textNode);
+                    textListElement.appendChild(tag); 
+                }
             });
         }
     } else { 
