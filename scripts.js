@@ -33,7 +33,7 @@ function addText(id) {
     textArea.value = (text);
     textArea.setSelectionRange(newPosition, newPosition);
     
-    sentenceButton.style.visibility = "collapse";
+    sentenceButton.style.display = "none";
 }
 
 function resetTextbox() {
@@ -47,7 +47,7 @@ function resetTextbox() {
 
         for(i=0; i < childs.length; i++){
             child = document.getElementById("sentence"+i);
-            child.style.visibility = "visible";
+            child.style.display = "block";
         }
     }
 }
