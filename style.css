@@ -61,12 +61,12 @@
 
 /* Reset margins */
 body,
-h1,
+h1, h2, 
 p {
     margin: 0; 
 }
 
-h1,
+h1, h2, 
 p {
     font-weight: 400;
 }
@@ -153,6 +153,12 @@ body {
 h1 {
     font-family: var(--ff-sans-cond);
     font-size: var(--fs-700);
+}
+
+h2 {
+    font-family: var(--ff-sans-cond);
+    font-size: var(--fs-400);
+    padding-bottom: 0;
 }
 
 p{
