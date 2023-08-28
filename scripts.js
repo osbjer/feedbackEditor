@@ -46,12 +46,11 @@ function resetTextbox() {
         document.getElementById("comment").value = "";
 
         var textListElements = document.getElementById("textlist");
-        var childs = textListElements.getElementsByTagName("*");
+        var childs = textListElements.getElementsByTagName("div");
 
         var i, child;
-
         for(i=0; i < childs.length; i++){
-            child = document.getElementById("sentence"+i);
+            child = document.getElementById("sentence"+(i));
             child.style.display = "block";
         }
     }
@@ -91,7 +90,8 @@ function updateTxtList(input) {
             }
 
             // Add all elements
-            contents.forEach((element, index) => {
+            var index=0;
+            contents.forEach((element, i) => {
                 var textNode = document.createTextNode(element.trim());
                 var text = textNode.textContent;
 
@@ -107,6 +107,7 @@ function updateTxtList(input) {
                     tag.setAttribute("onClick","addText('" + index + "');");
                     tag.appendChild(textNode);
                     textListElement.appendChild(tag); 
+                    index++;
                 }
             });
         }
